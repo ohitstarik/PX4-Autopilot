@@ -50,6 +50,9 @@ px4_add_romfs_files(
 	dodeca_top_cox.main.mix
 	firefly6.aux.mix
 	firefly6.main.mix
+	flimbus.main.mix
+	flimbusBoth.main.mix
+	flimbusInvertedRoll.main.mix
 	fw_generic_wing.main.mix
 	generic_diff_rover.main.mix
 	hexa_cox.main.mix
