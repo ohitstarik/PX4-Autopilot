@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# @name Flimbus Inverted Roll
+#
+# @type GhostFounder Vehicles
+# @class Copter
+#
+# @maintainer Tarik Agcayazi < uavtarik@gmail.com >
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+
+set MAV_TYPE 0
+
+# disable some checks to allow to fly
+# - with usb
+param set-default CBRK_USB_CHK 197848
+# - without real battery
+param set-default CBRK_SUPPLY_CHK 894281
+# - without safety switch
+param set-default COM_PREARM_MODE 0
+param set-default CBRK_IO_SAFETY 22027
+param set-default COM_DISARM_LAND 0
+# Disable preflight disarm to not interfere with external launching
+param set-default COM_DISARM_PRFLT 0
+
+# Battery Setups
+param set-default BAT1_A_PER_V 36.36751556
+param set-default BAT1_N_CELLS 2
+param set-default BAT1_V_CHARGED 4.2
+param set-default BAT1_V_DIV 18.1
+param set-default BAT1_V_EMPTY 3.2
+param set-default BAT2_A_PER_V 36.36751556
+param set-default BAT2_V_DIV 18.1
+
+# Set Flight Modes
+param set-default COM_FLTMODE1 6
+param set-default COM_FLTMODE4 8
+param set-default COM_FLTMODE6 2
+
+# RC sticks
+param set-default RC_MAP_ARM_SW 5
+param set-default RC_MAP_FLTMODE 6
+
+# Board orientation
+param set-default SENS_BOARD_ROT 4
+param set-default SENS_BOARD_Y_OFF 72 #NECESSARY CURRENTLY
+
+
+
+
+set MIXER flimbusInvertedRoll
+
+set PWM_OUT 1234

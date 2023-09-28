@@ -1,0 +1,44 @@
+Flimbus mixer
+===========================
+
+Designed for Flimbus
+Maintained by Tarik Agcayazi uavtarik@gmail.com
+
+This file defines mixers suitable for controlling a vehicle with two points of thrust without modulating thrust.
+
+TODO: Fix yaw/pitch maximums.
+
+Servo mixers
+-------------
+
+Servo 1 & 4 are strictly roll. We will roll Servo 1/4 to reduce lift on the side requiring a roll, and vice versa. The other side will be stationary.
+
+This first block of code is for Servo 1:
+
+M: 1
+O:          0 -10000      0 -10000   10000
+S: 0 0  10000  10000      0 -10000   10000
+
+Servo 2 and 3 are yaw, pitch, and thrust.
+
+Servo 2:
+
+M: 3
+O:      10000  10000      0 -10000  10000
+S: 0 1   5000   5000      0 -10000  10000
+S: 0 2  -5000  -5000      0 -10000  10000
+S: 0 3      0  10000  -5000  -5000   5000
+
+Servo 3:
+
+M: 3
+O:      10000  10000      0 -10000  10000
+S: 0 1  -5000  -5000      0 -10000  10000
+S: 0 2  -5000  -5000      0 -10000  10000
+S: 0 3      0 -10000   5000  -5000   5000
+
+This first block of code is for Servo 4:
+
+M: 1
+O:     -10000      0      0 -10000   10000
+S: 0 0  10000  10000      0 -10000   10000
